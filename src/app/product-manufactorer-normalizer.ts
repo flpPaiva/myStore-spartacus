@@ -7,15 +7,14 @@ import { prettifyToUrl } from './tools';
   providedIn: 'root'
 })
 
-export class ProductNameNormalizer implements Converter<Occ.Product, Product> {
+export class ProductManufactorerNormalizer implements Converter<Occ.Product, Product> {
 
   constructor() { }
 
   convert(source: Occ.Product, target: ProductModel): ProductModel {
 
-    if (source.name) {
-      target.nameForUrl = prettifyToUrl(source.name);
-      target.nameForUrl = target.nameForUrl.substring(0, 10);
+    if (source.manufacturer) {
+      target.manufacturerForUrl = prettifyToUrl(source.manufacturer);
     }
 
     return target;

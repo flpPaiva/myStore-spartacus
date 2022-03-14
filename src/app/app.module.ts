@@ -13,12 +13,15 @@ import { PRODUCT_NORMALIZER, UrlModule } from "@spartacus/core";
 import { ProductNameNormalizer } from "./product-name-normalizer";
 import { ProductCategoryNormalizer } from "./product-category-normalizer";
 import { RouterModule } from "@angular/router";
+import { ContactComponent } from './contact/contact.component';
+import { ProductManufactorerNormalizer } from "./product-manufactorer-normalizer";
 
 @NgModule({
   declarations: [
     AppComponent,
     StaticPageComponent,
-    SaleComponent
+    SaleComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { RouterModule } from "@angular/router";
   ],
   providers: [
     {provide: PRODUCT_NORMALIZER, useClass: ProductNameNormalizer, multi: true},
-    {provide: PRODUCT_NORMALIZER, useClass: ProductCategoryNormalizer, multi: true}
+    {provide: PRODUCT_NORMALIZER, useClass: ProductCategoryNormalizer, multi: true},
+    {provide: PRODUCT_NORMALIZER, useClass: ProductManufactorerNormalizer, multi: true}
   ],
   bootstrap: [AppComponent]
 })
