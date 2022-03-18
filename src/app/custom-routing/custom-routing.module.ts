@@ -6,6 +6,7 @@ import { CmsPageGuard, PageLayoutComponent } from '@spartacus/storefront';
 import { SaleComponent } from '../sale/sale.component';
 import { ConfigModule, RoutingConfig } from '@spartacus/core';
 import { ContactComponent } from '../contact/contact.component';
+import { SimpleBannerComponentComponent } from '../components/cms/simple-banner-component/simple-banner-component.component';
 
 const STATIC_ROUTES : Routes = [
   {path: 'static-page', component: StaticPageComponent, canActivate: [CmsPageGuard], data: {pageLabel: 'cart'}},
